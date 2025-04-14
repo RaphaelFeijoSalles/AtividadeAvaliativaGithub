@@ -28,6 +28,10 @@ Fiz modificações no arquivo;
 Mudei o README descrevendo o que fiz;
 Dei git add .
 Dei git commit(Alterações no README - Raphael)
+Dei git add .
+Dei git commit(Alterações no README2 - Raphael)
+Dei git push
+
 
 ## Comandos utilizados
 Todos os comandos foram executados via terminal utilizando chave SSH:
