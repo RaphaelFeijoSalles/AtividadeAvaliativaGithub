@@ -3,6 +3,7 @@
 ## Integrantes do grupo
 - Raphael Feijó Salles
 - Eduardo Silva Rodrigues
+- Leonardo Ribeiro Costa
 
 ## Objetivo
 Desenvolver colaborativamente um algoritmo em Portugol de subtração
@@ -55,6 +56,49 @@ Eduardo Silva Rodrigues:
 - alterei o arquivo README denovo, inseri meu terminal 
 - dei git add .
 - dei git commit -m ("Alterações README e Portugol2 - Eduardo") 
+
+Leonardo Ribeiro Costa:
+Atividade terminal:
+Seguindo os primeiros passos eu errei um comando e tive que apagar e criar uma nova chave novamente.
+
+Depois eu reiniciei o git bash e segui o passo a passo novamente.
+
+usei o git config --global user.name para verificar se meu nome estava cadastrado.
+git config --global --unset user.name / git config --global --unset user.email usei esses códigos para apagar qualquer tipo de dado.
+
+Logo após usei o ls -al ~/.ssh para listar as chaves existentes e depois o rm -f ~/.ssh/id_rsa* para apagar as chaves.
+
+Depois de tudo eu comecei a criar um novo usuário e email usados os códigos: git config --global user.name "leonardo ribeiro costa" /  git config --global user.email "leonardoribeiro11@edu.unifil.br" /  ssh-keygen -t rsa -b 4096 -C "leonardoribeiro11@edu.unifil.br".
+
+Usei duas vezes o clip < ~/.ssh/id_rsa.pub pois eu tinha uma chave salva no github e tinha esquecido de apagar, então eu apaguei a antiga e criei um ssh novo no github.
+
+Com o código ssh -T git@github.com testei minha conexão ao github e estava tudo correto.
+
+Logo após eu clonei o repositório usando o código: git clone git@github.com:usuario/repositorio.git. A primeira tentativa deu errado com o meu nome do usuário. Depois eu usei o nome do raphael no usuário de deu certo.
+
+Usei o cd AtividadeAvaliativaGithub para entrar na pasta.
+
+Dei um git pull
+
+Alterei o readme e o portugol.
+
+Usei um git add .
+
+Dei um git commit -m “alterações readme e portugol - leonardo”
+
+Dei um git push
+
+
+ 
+
+
+
+
+
+
+
+
+
 
 
 
@@ -328,6 +372,119 @@ To github.com:RaphaelFeijoSalles/AtividadeAvaliativaGithub.git
 
 compuni@maker312 MINGW64 ~/AtividadeAvaliativaGithub (main)
 $
+
+Código do Leonardo:
+compuni@maker282 MINGW64 ~
+$ git config --global user.name
+leonardo ribeiro costa
+
+compuni@maker282 MINGW64 ~
+$ git config --global --unset user.name
+
+compuni@maker282 MINGW64 ~
+$ git config --global --unset user.email
+
+compuni@maker282 MINGW64 ~
+$ ls -al ~/.ssh
+total 21
+drwxr-xr-x 1 compuni 1049089   0 Apr 14 19:31 ./
+drwxr-xr-x 1 compuni 1049089   0 Apr 14 19:34 ../
+-rw-r--r-- 1 compuni 1049089 828 Mar 19 20:05 known_hosts
+-rw-r--r-- 1 compuni 1049089  92 Mar 19 20:05 known_hosts.old
+
+compuni@maker282 MINGW64 ~
+$ rm -f ~/.ssh/id_rsa*
+
+compuni@maker282 MINGW64 ~
+$ git config --global user.name "leonardo ribeiro costa"
+
+compuni@maker282 MINGW64 ~
+$ git config --global user.email "leonardoribeiro11@edu.unifil.br"
+
+compuni@maker282 MINGW64 ~
+$ ssh-keygen -t rsa -b 4096 -C "leonardoribeiro11@edu.unifil.br"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/compuni/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/compuni/.ssh/id_rsa
+Your public key has been saved in /c/Users/compuni/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:qXm4ydnajASFmfmHi6zatKY2vKteae3uLaX0n6s5Okk leonardoribeiro11@edu.unifil.br
+The key's randomart image is:
++---[RSA 4096]----+
+|                 |
+|     =           |
+|    = .          |
+|     o . .       |
+|    . o S        |
+|   .oE B         |
+|. .+=.@ .        |
+| *+o.B.%. .      |
+|BBB o=@=B+.      |
++----[SHA256]-----+
+
+compuni@maker282 MINGW64 ~
+$ eval "$(ssh-agent -s)"
+Agent pid 944
+
+compuni@maker282 MINGW64 ~
+$ ssh-add ~/.ssh/id_rsa
+Identity added: /c/Users/compuni/.ssh/id_rsa (leonardoribeiro11@edu.unifil.br)
+
+compuni@maker282 MINGW64 ~
+$ clip < ~/.ssh/id_rsa.pub
+
+compuni@maker282 MINGW64 ~
+$ clip < ~/.ssh/id_rsa.pub
+
+compuni@maker282 MINGW64 ~
+$ ssh -T git@github.com
+Hi LeonardoRibeiro11! You've successfully authenticated, but GitHub does not provide shell access.
+
+compuni@maker282 MINGW64 ~
+$ git clone git@github.com:LeonardoRibeiro11/AtividadeAvaliativaGithub.git
+Cloning into 'AtividadeAvaliativaGithub'...
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+compuni@maker282 MINGW64 ~
+$ $ git clone git@github.com:RaphaelFeijoSalles/AtividadeAvaliativaGithub.git
+bash: $: command not found
+
+compuni@maker282 MINGW64 ~
+$ git clone git@github.com:RaphaelFeijoSalles/AtividadeAvaliativaGithub.git
+Cloning into 'AtividadeAvaliativaGithub'...
+remote: Enumerating objects: 15, done.
+remote: Counting objects: 100% (15/15), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 15 (delta 2), reused 12 (delta 2), pack-reused 0 (from 0)
+Receiving objects: 100% (15/15), done.
+Resolving deltas: 100% (2/2), done.
+
+compuni@maker282 MINGW64 ~
+$ cd AtividadeAvaliativaGithub
+
+compuni@maker282 MINGW64 ~/AtividadeAvaliativaGithub (main)
+$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 3.17 KiB | 124.00 KiB/s, done.
+From github.com:RaphaelFeijoSalles/AtividadeAvaliativaGithub
+   e71c8c4..28be27b  main       -> origin/main
+Updating e71c8c4..28be27b
+Fast-forward
+ README.md | 167 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 167 insertions(+)
+
+compuni@maker282 MINGW64 ~/AtividadeAvaliativaGithub (main)
+$
+
 
 
 
